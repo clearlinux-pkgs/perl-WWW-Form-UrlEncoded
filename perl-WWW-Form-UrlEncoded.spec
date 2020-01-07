@@ -4,13 +4,14 @@
 #
 Name     : perl-WWW-Form-UrlEncoded
 Version  : 0.26
-Release  : 1
+Release  : 2
 URL      : https://cpan.metacpan.org/authors/id/K/KA/KAZEBURO/WWW-Form-UrlEncoded-0.26.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/K/KA/KAZEBURO/WWW-Form-UrlEncoded-0.26.tar.gz
-Summary  : parser and builder for application/x-www-form-urlencoded
+Summary  : 'parser and builder for application/x-www-form-urlencoded'
 Group    : Development/Tools
 License  : Artistic-1.0 Artistic-1.0-Perl GPL-1.0
 Requires: perl-WWW-Form-UrlEncoded-license = %{version}-%{release}
+Requires: perl-WWW-Form-UrlEncoded-perl = %{version}-%{release}
 BuildRequires : buildreq-cpan
 
 %description
@@ -21,7 +22,6 @@ BuildRequires : buildreq-cpan
 Summary: dev components for the perl-WWW-Form-UrlEncoded package.
 Group: Development
 Provides: perl-WWW-Form-UrlEncoded-devel = %{version}-%{release}
-Requires: perl-WWW-Form-UrlEncoded = %{version}-%{release}
 Requires: perl-WWW-Form-UrlEncoded = %{version}-%{release}
 
 %description dev
@@ -36,8 +36,18 @@ Group: Default
 license components for the perl-WWW-Form-UrlEncoded package.
 
 
+%package perl
+Summary: perl components for the perl-WWW-Form-UrlEncoded package.
+Group: Default
+Requires: perl-WWW-Form-UrlEncoded = %{version}-%{release}
+
+%description perl
+perl components for the perl-WWW-Form-UrlEncoded package.
+
+
 %prep
 %setup -q -n WWW-Form-UrlEncoded-0.26
+cd %{_builddir}/WWW-Form-UrlEncoded-0.26
 
 %build
 export http_proxy=http://127.0.0.1:9/
@@ -55,7 +65,7 @@ fi
 %install
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/perl-WWW-Form-UrlEncoded
-cp LICENSE %{buildroot}/usr/share/package-licenses/perl-WWW-Form-UrlEncoded/LICENSE
+cp %{_builddir}/WWW-Form-UrlEncoded-0.26/LICENSE %{buildroot}/usr/share/package-licenses/perl-WWW-Form-UrlEncoded/220fe941787679d8a043c0444548ac186c86f309
 if test -f Makefile.PL; then
 make pure_install PERL_INSTALL_ROOT=%{buildroot} INSTALLDIRS=vendor
 else
@@ -68,9 +78,6 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.2/x86_64-linux-thread-multi/WWW/Form/UrlEncoded.pm
-/usr/lib/perl5/vendor_perl/5.28.2/x86_64-linux-thread-multi/WWW/Form/UrlEncoded/PP.pm
-/usr/lib/perl5/vendor_perl/5.28.2/x86_64-linux-thread-multi/auto/WWW/Form/UrlEncoded/XS/.keep
 
 %files dev
 %defattr(-,root,root,-)
@@ -79,4 +86,10 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/package-licenses/perl-WWW-Form-UrlEncoded/LICENSE
+/usr/share/package-licenses/perl-WWW-Form-UrlEncoded/220fe941787679d8a043c0444548ac186c86f309
+
+%files perl
+%defattr(-,root,root,-)
+/usr/lib/perl5/vendor_perl/5.30.1/x86_64-linux-thread-multi/WWW/Form/UrlEncoded.pm
+/usr/lib/perl5/vendor_perl/5.30.1/x86_64-linux-thread-multi/WWW/Form/UrlEncoded/PP.pm
+/usr/lib/perl5/vendor_perl/5.30.1/x86_64-linux-thread-multi/auto/WWW/Form/UrlEncoded/XS/.keep
