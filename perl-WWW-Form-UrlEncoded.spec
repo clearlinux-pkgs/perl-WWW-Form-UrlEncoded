@@ -4,7 +4,7 @@
 #
 Name     : perl-WWW-Form-UrlEncoded
 Version  : 0.26
-Release  : 3
+Release  : 4
 URL      : https://cpan.metacpan.org/authors/id/K/KA/KAZEBURO/WWW-Form-UrlEncoded-0.26.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/K/KA/KAZEBURO/WWW-Form-UrlEncoded-0.26.tar.gz
 Summary  : 'parser and builder for application/x-www-form-urlencoded'
@@ -90,6 +90,6 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.30.2/x86_64-linux-thread-multi/WWW/Form/UrlEncoded.pm
-/usr/lib/perl5/vendor_perl/5.30.2/x86_64-linux-thread-multi/WWW/Form/UrlEncoded/PP.pm
-/usr/lib/perl5/vendor_perl/5.30.2/x86_64-linux-thread-multi/auto/WWW/Form/UrlEncoded/XS/.keep
+/usr/lib/perl5/vendor_perl/5.30.3/x86_64-linux-thread-multi/WWW/Form/UrlEncoded.pm
+/usr/lib/perl5/vendor_perl/5.30.3/x86_64-linux-thread-multi/WWW/Form/UrlEncoded/PP.pm
+/usr/lib/perl5/vendor_perl/5.30.3/x86_64-linux-thread-multi/auto/WWW/Form/UrlEncoded/XS/.keep
