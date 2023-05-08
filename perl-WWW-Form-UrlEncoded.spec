@@ -4,7 +4,7 @@
 #
 Name     : perl-WWW-Form-UrlEncoded
 Version  : 0.26
-Release  : 7
+Release  : 8
 URL      : https://cpan.metacpan.org/authors/id/K/KA/KAZEBURO/WWW-Form-UrlEncoded-0.26.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/K/KA/KAZEBURO/WWW-Form-UrlEncoded-0.26.tar.gz
 Summary  : 'parser and builder for application/x-www-form-urlencoded'
